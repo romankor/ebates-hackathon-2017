@@ -61,7 +61,7 @@ chrome.extension.sendMessage({}, function(response) {
 		if (macys_product_view.test(window.location.href)) {
 			product_view();
 		}
-		else if (macys_add_to_cart.test(window.location.href)) {
+		if (macys_add_to_cart.test(window.location.href)) {
 			add_to_cart();
 		}
 	}

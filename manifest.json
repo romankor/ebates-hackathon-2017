@@ -23,7 +23,8 @@
   "content_scripts": [
     {
       "matches": [
-        "https://www.macys.com/shop/product/*"
+        "https://www.macys.com/shop/product/*",
+        "https://www.macys.com/bag/atbpage/*"
       ],
       "js": [
         "src/inject/inject.js", "js/jquery/jquery.min.js"
