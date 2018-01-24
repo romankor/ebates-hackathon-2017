@@ -1,6 +1,6 @@
 let macys_product_view = new RegExp('.*www.macys.com\/shop\/product\/.*?ID=([0-9]+).*');
 let macys_add_to_cart = new RegExp('.*www.macys.com\/bag\/atbpage.*');
-let macys_prefix = "cr::8333::";
+var macys_prefix = "cr::8333::";
 
 function add_code(code) {
 	let wrapper = `
@@ -19,10 +19,10 @@ function add_code(code) {
 
 function product_view(prefix) {
 	let product_view_code = `
-	  var productId = MACYS.brightTag.product.productID;
+	  var productId = \"${prefix}\" + MACYS.brightTag.product.productID;
 		console.log('FB page view event of product ' + productId);
     var params = {};
-    params[FB.AppEvents.ParameterNames.CONTENT_ID] = ${prefix} + productId;
+    params[FB.AppEvents.ParameterNames.CONTENT_ID] = productId;
     FB.AppEvents.logEvent(
       FB.AppEvents.EventNames.VIEWED_CONTENT,
       null,
@@ -34,10 +34,10 @@ function product_view(prefix) {
 
 function add_to_cart(prefix) {
 	let add_to_bag_code = `
-	  var productId = MACYS.Bag.addToBagPage.productId;
+	  var productId = \"${prefix}\" + MACYS.Bag.addToBagPage.productId;
 		console.log('FB add to cart event of product ' + productId);
     var params = {};
-    params[FB.AppEvents.ParameterNames.CONTENT_ID] =${prefix} + productId;
+    params[FB.AppEvents.ParameterNames.CONTENT_ID] = productId;
     FB.AppEvents.logEvent(
       FB.AppEvents.EventNames.ADDED_TO_CART,
       null,
