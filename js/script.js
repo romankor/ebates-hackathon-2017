@@ -7,7 +7,7 @@ window.fbAsyncInit = function() {
     });
     console.log('init FB');
     window.__fb_init = true;
-    FB.AppEvents.logPageView();
+    fbq('init', '184686215615625');
 
 };
 

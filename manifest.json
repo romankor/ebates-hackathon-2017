@@ -2,7 +2,7 @@
   "name": "ebates retargeting",
   "version": "0.1",
   "manifest_version": 2,
-  "description": "Ebates Hackatron 2017",
+  "description": "Ebates Hackathon 2017",
   "homepage_url": "http://www.ebates.com",
   "icons": {
     "32": "icons/ebates.png",
@@ -26,7 +26,8 @@
       "matches": [
         "https://www.macys.com/shop/product/*",
         "https://www.macys.com/bag/atbpage/*",
-        "https://www.ebates.com/hotels/details/*"
+        "https://www.ebates.com/hotels/details/*",
+        "http://www.ritzcarlton.com/en/hotels/canada/toronto"
       ],
       "js": [
         "src/inject/inject.js", "js/jquery/jquery.min.js"
