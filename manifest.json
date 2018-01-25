@@ -18,13 +18,15 @@
   },
   "permissions": [
     "https://www.macys.com/",
+    "https://www.ebates.com/",
     "activeTab"
   ],
   "content_scripts": [
     {
       "matches": [
         "https://www.macys.com/shop/product/*",
-        "https://www.macys.com/bag/atbpage/*"
+        "https://www.macys.com/bag/atbpage/*",
+        "https://www.ebates.com/hotels/details/*"
       ],
       "js": [
         "src/inject/inject.js", "js/jquery/jquery.min.js"
@@ -32,6 +34,7 @@
     }
   ],
   "web_accessible_resources": [
-      "js/script.js"
+      "js/script.js",
+      "js/pixel.js"
   ]
 }
